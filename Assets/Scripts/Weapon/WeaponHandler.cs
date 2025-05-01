@@ -8,7 +8,7 @@ public class WeaponHandler : MonoBehaviour
     void Start()
     {
         Weapon newPrimaryWeapon = Instantiate(primaryWeapon, transform);
-        Weapon newSecondaryWeapon = Instantiate(secondaryWeapon, transform);
+        //Weapon newSecondaryWeapon = Instantiate(secondaryWeapon, transform);
     }
     void Update()
     {

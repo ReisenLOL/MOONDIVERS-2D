@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 8236352266899253802}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5575587, y: 2.5020359, z: 0.06270067}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,10 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46bd379d4b69f30429efee31502ec692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  projectileSpeed: 0
-  fireRate: 0
+  damage: 25
+  projectileSpeed: 16
+  fireRate: 0.1
+  fireTime: 0
   magCapacity: 0
   magAmount: 0
   ammoCapacity: 0
   ammoAmount: 0
+  maxRange: 8
+  attack: {fileID: 6991626463302706206, guid: 0763029c505856e4fb62768a20009243, type: 3}
