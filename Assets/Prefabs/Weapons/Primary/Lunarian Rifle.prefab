@@ -48,9 +48,10 @@ MonoBehaviour:
   projectileSpeed: 16
   fireRate: 0.1
   fireTime: 0
-  magCapacity: 0
-  magAmount: 0
-  ammoCapacity: 0
-  ammoAmount: 0
+  magCapacity: 5
+  magAmount: 5
+  ammoCapacity: 45
+  ammoAmount: 45
   maxRange: 8
+  isEquipped: 0
   attack: {fileID: 6991626463302706206, guid: 0763029c505856e4fb62768a20009243, type: 3}

@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    public PlayerStatsUI playerStatsUI;
+
     public float damage;
     public float projectileSpeed;
     public float fireRate;
@@ -11,6 +13,7 @@ public class Weapon : MonoBehaviour
     public int ammoCapacity;
     public int ammoAmount;
     public float maxRange;
+    public bool isEquipped = false;
     public Attack attack;
     public void ReloadAmmo()
     {
@@ -18,6 +21,8 @@ public class Weapon : MonoBehaviour
         {
             magAmount--;
             ammoAmount = ammoCapacity;
+            playerStatsUI.UpdateMagAmount(magAmount, magCapacity);
+            playerStatsUI.UpdateBulletAmount(ammoAmount, ammoCapacity);
         }
     }
 }

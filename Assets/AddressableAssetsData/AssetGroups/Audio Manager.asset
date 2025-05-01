@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Audio Manager
+  m_EditorClassIdentifier: 
+  m_GroupName: Audio Manager
+  m_GUID: 3f098dadb50041a4aa5ed7db1d119639
+  m_SerializeEntries:
+  - m_GUID: 34215ea08f295ea4f9e78bbe991ca3df
+    m_Address: Assets/Core Extensions & Helpers/Audio Clip Wrapper/Dynamic Channels.mixer
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Dynamic Channels
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 44e67e4a6f2ac4a43b20ced7a9025063
+    m_Address: Assets/Core Extensions & Helpers/Addressables
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 76bc17acced13644e9689246d8b6104a
+    m_Address: Assets/Core Extensions & Helpers/Audio Clip Wrapper/Single Channels.mixer
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Single Channels
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c3d0c3b1bbcee314fa91d6246890b7bf
+    m_Address: Assets/Core Extensions & Helpers/Audio Clip Wrapper/Addressable
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio Engine
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 39bfe3833efbe094eb61962a0e4d9a20, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 9ddc852f0d8d1b241a4162173e847218, type: 2}
+    - {fileID: 11400000, guid: a5ab3e2f1f4e5dc498a0cb6ec2255c72, type: 2}
