@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2751781122968573587}
   - component: {fileID: 1793295777043031351}
   m_Layer: 0
-  m_Name: Lunarian Rifle
+  m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,24 +44,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46bd379d4b69f30429efee31502ec692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: Lunarian Rifle
+  weaponName: Pistol
   playerStatsUI: {fileID: 0}
   damage: 25
-  fireRate: 0.15
+  fireRate: 0.45
   fireTime: 0
   maxRange: 12
-  isEquipped: 1
+  isEquipped: 0
   attack: {fileID: 6991626463302706206, guid: 0763029c505856e4fb62768a20009243, type: 3}
   attackSound: {fileID: 8300000, guid: a002ed4089bfa1347b7ac4d8f06a64d8, type: 3}
   projectileSpread: 20
   projectileSpeed: 24
   magCapacity: 5
   magAmount: 5
-  ammoCapacity: 45
-  ammoAmount: 45
+  ammoCapacity: 8
+  ammoAmount: 8
   reloadSound: {fileID: 8300000, guid: 769dd9ca8e697854fbed017c377565f8, type: 3}
   reloadRate: 2
   reloadTime: 0
   isReloading: 0
   audioSource: {fileID: 0}
-  automaticFiring: 1
+  automaticFiring: 0
