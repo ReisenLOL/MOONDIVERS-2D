@@ -3,12 +3,17 @@ using UnityEngine;
 
 public class PlayerSpellHandler : MonoBehaviour
 {
+    public List<Spell> spellsToAdd;
     public List<Spell> spellList;
     public PlayerController player;
     public GameObject spellListUI;
     void Start()
     {
-        
+        for (int i = 0; i < spellsToAdd.Count; i++)
+        {
+            Spell newSpell = Instantiate(spellsToAdd[i], transform);
+            spellList.Add(newSpell);
+        }
     }
 
     // Update is called once per frame
@@ -16,6 +21,10 @@ public class PlayerSpellHandler : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftControl))
         {
+            foreach (Spell spell in spellList)
+            {
+                spell.playerIsCasting = true;
+            }
             Weapon[] weaponList = FindObjectsByType<Weapon>(FindObjectsSortMode.None);
             foreach (Weapon weapon in weaponList)
             {
@@ -27,6 +36,10 @@ public class PlayerSpellHandler : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
+            foreach (Spell spell in spellList)
+            {
+                spell.playerIsCasting = false;
+            }
             Weapon[] weaponList = FindObjectsByType<Weapon>(FindObjectsSortMode.None);
             foreach (Weapon weapon in weaponList)
             {
