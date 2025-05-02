@@ -14,7 +14,7 @@ public class RifleWeapon : RangedWeapon
     void Update()
     {
         fireTime += Time.deltaTime;
-        if ((automaticFiring && Input.GetMouseButton(0) || !automaticFiring && Input.GetMouseButtonDown(0)) && ammoAmount > 0)
+        if ((automaticFiring && Input.GetMouseButton(0) || !automaticFiring && Input.GetMouseButtonDown(0)) && ammoAmount > 0 && canFire)
         {
             if (fireTime >= fireRate)
             {

@@ -3,15 +3,10 @@ using UnityEngine;
 public class PlayerController : Unit
 {
     public Rigidbody2D rb;
-    private Vector2 moveInput;
+    public Vector2 moveInput;
     public SpriteRenderer playerSpriteRenderer;
     private bool isFacingRight = false;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public bool isInputtingSpell = false;
     void Update()
     {
         moveInput.x = Input.GetAxisRaw("Horizontal");
@@ -30,6 +25,9 @@ public class PlayerController : Unit
     }
     private void FixedUpdate()
     {
-        rb.linearVelocity = moveInput * speed;
+        if (!isInputtingSpell)
+        {
+            rb.linearVelocity = moveInput * speed;
+        }
     }
 }

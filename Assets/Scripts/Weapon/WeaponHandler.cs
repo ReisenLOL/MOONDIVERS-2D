@@ -3,6 +3,7 @@ using UnityEngine;
 public class WeaponHandler : MonoBehaviour
 {
     public PlayerStatsUI playerStatsUI;
+    public PlayerController player;
     public AudioSource audioSource;
     public Weapon primaryWeapon;
     public Weapon secondaryWeapon;
@@ -27,7 +28,7 @@ public class WeaponHandler : MonoBehaviour
     }
     void Update()
     {
-        if (_equippedRangedWeapon == null || _equippedRangedWeapon != null && !_equippedRangedWeapon.isReloading)
+        if ((_equippedRangedWeapon == null || _equippedRangedWeapon != null && !_equippedRangedWeapon.isReloading) && !player.isInputtingSpell)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {

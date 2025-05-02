@@ -50,7 +50,7 @@ MonoBehaviour:
   fireRate: 0.15
   fireTime: 0
   maxRange: 12
-  isEquipped: 1
+  canFire: 1
   attack: {fileID: 6991626463302706206, guid: 0763029c505856e4fb62768a20009243, type: 3}
   attackSound: {fileID: 8300000, guid: a002ed4089bfa1347b7ac4d8f06a64d8, type: 3}
   projectileSpread: 20
