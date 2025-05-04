@@ -7,6 +7,7 @@ public class PlayerSpellHandler : MonoBehaviour
     public List<Spell> spellList;
     public PlayerController player;
     public GameObject spellListUI;
+    public SpellListUI spellListHandler;
     void Start()
     {
         for (int i = 0; i < spellsToAdd.Count; i++)
@@ -36,6 +37,7 @@ public class PlayerSpellHandler : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
+            spellListHandler.ResetSpellInputText();
             foreach (Spell spell in spellList)
             {
                 spell.playerIsCasting = false;

@@ -451,6 +451,7 @@ MonoBehaviour:
   spellListToDisplay: []
   spellHandler: {fileID: 1464434727}
   TemplateSpellUI: {fileID: 1578813743}
+  spellInputList: []
 --- !u!114 &547245476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1658,6 +1659,10 @@ PrefabInstance:
       propertyPath: spellListUI
       value: 
       objectReference: {fileID: 1230579011}
+    - target: {fileID: 6174811228212779082, guid: 2c768bc9784d8534cb6fb4461a2ac198, type: 3}
+      propertyPath: spellListHandler
+      value: 
+      objectReference: {fileID: 547245475}
     - target: {fileID: 6174811228212779082, guid: 2c768bc9784d8534cb6fb4461a2ac198, type: 3}
       propertyPath: spellList.Array.size
       value: 0

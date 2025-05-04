@@ -28,9 +28,18 @@ public class Spell : MonoBehaviour
             {
                 if (Input.GetKeyDown(inputCode[currentIndex]))
                 {
+                    for (int i = 0; i < spellListUI.spellInputList.Count; i++)
+                    {
+                        if (spellListUI.spellInputList[i].text[0] == inputCode[currentIndex].ToString()[0])
+                        {
+                            string changeInputText = spellListUI.spellInputList[i].text.Substring(1);
+                            spellListUI.spellInputList[i].text = changeInputText;
+                        }
+                    }
                     currentIndex++;
                     if (currentIndex >= inputCode.Count)
                     {
+                        spellListUI.ResetSpellInputText();
                         startCastingSpell();
                         currentIndex = 0;
                     }
