@@ -1669,7 +1669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6174811228212779082, guid: 2c768bc9784d8534cb6fb4461a2ac198, type: 3}
       propertyPath: spellsToAdd.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6174811228212779082, guid: 2c768bc9784d8534cb6fb4461a2ac198, type: 3}
       propertyPath: 'spellList.Array.data[0]'
@@ -1679,6 +1679,10 @@ PrefabInstance:
       propertyPath: 'spellsToAdd.Array.data[0]'
       value: 
       objectReference: {fileID: -8140709485321297758, guid: 0a8adfbf2c945874cbdd64c054e7e826, type: 3}
+    - target: {fileID: 6174811228212779082, guid: 2c768bc9784d8534cb6fb4461a2ac198, type: 3}
+      propertyPath: 'spellsToAdd.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1936934535833449578, guid: 8cb375bbb0a5a3047a33883d62bdc7d1, type: 3}
     - target: {fileID: 7470771666746881035, guid: 2c768bc9784d8534cb6fb4461a2ac198, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.862639

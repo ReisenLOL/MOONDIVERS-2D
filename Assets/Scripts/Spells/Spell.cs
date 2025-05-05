@@ -8,6 +8,7 @@ public class Spell : MonoBehaviour
     public string spellName;
     public List<KeyCode> inputCode = new();
     public float cooldown;
+    public float cooldownTime;
     public float castingTime;
     public float castingTimeElapsed = 0;
     public bool playerIsCasting;
@@ -22,6 +23,10 @@ public class Spell : MonoBehaviour
     }
     protected virtual void Update()
     {
+        if (cooldownTime > 0)
+        {
+            cooldownTime -= Time.deltaTime;
+        }
         if (playerIsCasting)
         {
             if (Input.anyKeyDown)
@@ -56,7 +61,8 @@ public class Spell : MonoBehaviour
             {
                 Vector3 mousePos = Input.mousePosition;
                 mousePos.z = Camera.main.nearClipPlane + 10;
-                spellLocation = Camera.main.ScreenToWorldPoint(mousePos);
+                Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
+                spellLocation = worldPos;
                 hasChosenLocation = true;
             }
             if (!hasChosenLocation && Input.GetKeyUp(KeyCode.LeftControl))
@@ -68,6 +74,7 @@ public class Spell : MonoBehaviour
                 castingTimeElapsed += Time.deltaTime;
                 if (castingTimeElapsed > castingTime)
                 {
+                    hasChosenLocation = false;
                     CastSpell();
                     castingTimeElapsed = 0;
                     thisSpellIsCasting = false;
