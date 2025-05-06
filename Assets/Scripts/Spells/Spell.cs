@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Spell : MonoBehaviour
@@ -16,10 +17,12 @@ public class Spell : MonoBehaviour
     public bool thisSpellIsCasting;
     public Vector2 spellLocation;
     public bool hasChosenLocation;
-
+    public TextMeshProUGUI spellListBlock;
+    public bool showingInputCode;
     protected virtual void Start()
     {
         spellListUI = FindFirstObjectByType<SpellListUI>();
+        ShowInputText();
     }
     protected virtual void Update()
     {
@@ -29,7 +32,16 @@ public class Spell : MonoBehaviour
         }
         if (playerIsCasting)
         {
-            if (Input.anyKeyDown)
+            if (cooldownTime > 0)
+            {
+                spellListBlock.text = "Cooldown: " + cooldownTime;
+            }
+            if (cooldownTime <= 0 && !showingInputCode)
+            {
+                ShowInputText();
+                showingInputCode = true;
+            }
+            if (cooldownTime <= 0 && Input.anyKeyDown)
             {
                 if (Input.GetKeyDown(inputCode[currentIndex]))
                 {
@@ -57,6 +69,7 @@ public class Spell : MonoBehaviour
         }
         if (thisSpellIsCasting)
         {
+            spellListBlock.text = "Casting...";
             if (!hasChosenLocation && Input.GetMouseButton(0))
             {
                 Vector3 mousePos = Input.mousePosition;
@@ -89,5 +102,15 @@ public class Spell : MonoBehaviour
     protected virtual void CastSpell()
     {
         Debug.Log("Casted Spell: " + spellName + " at " + spellLocation);
+        cooldownTime = cooldown;
+    }
+    public void ShowInputText()
+    {
+        string newInputDisplay = "";
+        for (int i = 0; i < inputCode.Count; i++)
+        {
+            newInputDisplay += inputCode[i].ToString();
+        }
+        spellListBlock.text = newInputDisplay;
     }
 }

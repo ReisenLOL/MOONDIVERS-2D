@@ -30,4 +30,13 @@ public class PlayerController : Unit
             rb.linearVelocity = moveInput * speed;
         }
     }
+    public override void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Debug.Log("unit killed:" + gameObject.name);
+            //Destroy(gameObject);
+        }
+    }
 }

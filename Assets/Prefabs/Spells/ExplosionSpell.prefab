@@ -48,7 +48,7 @@ MonoBehaviour:
   icon: {fileID: 0}
   spellName: Explosion Spell
   inputCode: 640000007700000077000000
-  cooldown: 0
+  cooldown: 60
   cooldownTime: 0
   castingTime: 2
   castingTimeElapsed: 0
@@ -56,9 +56,10 @@ MonoBehaviour:
   thisSpellIsCasting: 0
   spellLocation: {x: 0, y: 0}
   hasChosenLocation: 0
+  spellListBlock: {fileID: 0}
   blastRadius: 5
   unitLayer:
     serializedVersion: 2
     m_Bits: 72
   blastDamage: 100
-  explosionVisual: {fileID: 8432029642112169682, guid: 2e9c078dd7d05a94ba12e26d79cff8de, type: 3}
+  explosionVisual: {fileID: -854930633111981069, guid: 2e9c078dd7d05a94ba12e26d79cff8de, type: 3}

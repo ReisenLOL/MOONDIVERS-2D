@@ -7,6 +7,7 @@ public class SpellListUI : MonoBehaviour
     public List<Spell> spellListToDisplay = new();
     public PlayerSpellHandler spellHandler;
     public GameObject TemplateSpellUI;
+    public Transform objectToInstantiateTo;
     public List<TextMeshProUGUI> spellInputList = new();
 
     private void Start()
@@ -17,24 +18,21 @@ public class SpellListUI : MonoBehaviour
         {
             AddSpellToDisplay(spell);
         }
+        //objectToInstantiateTo.gameObject.SetActive(false);
     }
     private void AddSpellToDisplay(Spell spell)
     {
-        GameObject newSpellUI = Instantiate(TemplateSpellUI, transform);
+        GameObject newSpellUI = Instantiate(TemplateSpellUI, objectToInstantiateTo);
         newSpellUI.transform.Find("SpellNameLabel").GetComponent<TextMeshProUGUI>().text = spell.spellName;
-        string newInputDisplay = "";
-        for (int i = 0; i < spell.inputCode.Count; i++)
-        {
-            newInputDisplay += spell.inputCode[i].ToString();
-        }
         TextMeshProUGUI spellInputLabel = newSpellUI.transform.Find("SpellInputLabel").GetComponent<TextMeshProUGUI>();
-        spellInputLabel.text = newInputDisplay;
+        spell.spellListBlock = spellInputLabel;
+        //fix this, this does it to the prefab not the instance.
         spellInputList.Add(spellInputLabel);
         newSpellUI.SetActive(true);
     }
     public void ResetSpellInputText()
     {
-        for (int i = 0; i < spellInputList.Count; i++)
+        for (int i = 0; i < spellInputList.Count; i++)      
         {
             string newInputDisplay = "";
             for (int j = 0; j < spellListToDisplay[i].inputCode.Count; j++)

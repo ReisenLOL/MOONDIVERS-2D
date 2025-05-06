@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6844193736562452576}
   - component: {fileID: 2892814843815737974}
+  - component: {fileID: -854930633111981069}
   m_Layer: 0
   m_Name: Explosion Circle For Now
   m_TagString: Untagged
@@ -87,3 +88,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-854930633111981069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8432029642112169682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614c6976f400ebe4fba5cb47a3ec5edd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dissipationRate: 2
