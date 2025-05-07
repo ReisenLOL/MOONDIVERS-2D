@@ -44,11 +44,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3534b1bd3d7908a40ad7baaabfe921ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellListUI: {fileID: 0}
   icon: {fileID: 0}
   spellName: Resupply
   inputCode: 73000000730000007700000064000000
-  cooldown: 0
+  cooldown: 240
+  cooldownTime: 0
   castingTime: 2
   castingTimeElapsed: 0
   playerIsCasting: 0
   thisSpellIsCasting: 0
+  spellLocation: {x: 0, y: 0}
+  hasChosenLocation: 0
+  spellListBlock: {fileID: 0}
+  showingInputCode: 0
+  AmmoCrate: {fileID: 5193874901329863923, guid: 1ed6f3ff64977e54e9334d553f98247a, type: 3}
