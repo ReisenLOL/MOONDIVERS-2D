@@ -25,6 +25,7 @@ public class WeaponHandler : MonoBehaviour
         playerStatsUI.UpdateWeaponName(equippedWeapon.weaponName);
         _secondaryWeaponInstance = Instantiate(secondaryWeapon, transform);
         _secondaryWeaponInstance.gameObject.SetActive(false);
+        bool hasRanged = _primaryWeaponInstance.TryGetComponent(out _equippedRangedWeapon);
     }
     void Update()
     {
