@@ -2,15 +2,9 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected PlayerController playerThatPickedUpItem;
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        playerThatPickedUpItem = collision.GetComponent<PlayerController>();
     }
 }
