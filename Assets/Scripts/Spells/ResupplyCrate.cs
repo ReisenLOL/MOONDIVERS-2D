@@ -1,14 +1,15 @@
 using UnityEngine;
 
-public class ResupplyCrate : MonoBehaviour
+public class ResupplyCrate : ItemPickup
 {
     private PlayerStatsUI playerStatsUI;
     private void Start()
     {
         playerStatsUI = FindFirstObjectByType<PlayerStatsUI>();
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
+        base.OnTriggerEnter2D(collision);
         WeaponHandler playerWeaponHandler = collision.gameObject.GetComponentInChildren<WeaponHandler>();
         if (playerWeaponHandler._primaryWeaponInstance.TryGetComponent(out RangedWeapon isPrimaryRangedWeapon))
         {

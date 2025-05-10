@@ -6,6 +6,9 @@ public class SupportWeaponPickup : ItemPickup
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         base.OnTriggerEnter2D(collision);
-        playerThatPickedUpItem.GetComponentInChildren<WeaponHandler>().supportWeapon = weaponToAdd;
+        WeaponHandler playerWeaponHandler = playerThatPickedUpItem.GetComponentInChildren<WeaponHandler>();
+        playerWeaponHandler.supportWeapon = weaponToAdd;
+        playerWeaponHandler._supportWeaponInstance = Instantiate(weaponToAdd, playerWeaponHandler.transform);
+        playerWeaponHandler._secondaryWeaponInstance.gameObject.SetActive(false);
     }
 }
