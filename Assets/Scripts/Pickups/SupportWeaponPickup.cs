@@ -9,6 +9,7 @@ public class SupportWeaponPickup : ItemPickup
         WeaponHandler playerWeaponHandler = playerThatPickedUpItem.GetComponentInChildren<WeaponHandler>();
         playerWeaponHandler.supportWeapon = weaponToAdd;
         playerWeaponHandler._supportWeaponInstance = Instantiate(weaponToAdd, playerWeaponHandler.transform);
-        playerWeaponHandler._secondaryWeaponInstance.gameObject.SetActive(false);
+        playerWeaponHandler._supportWeaponInstance.gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }

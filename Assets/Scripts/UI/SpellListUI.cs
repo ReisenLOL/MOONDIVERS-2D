@@ -30,9 +30,18 @@ public class SpellListUI : MonoBehaviour
         spellInputList.Add(spellInputLabel);
         newSpellUI.SetActive(true);
     }
-    public void ResetSpellInputText()
+    public void ResetSpellInputTextSpecific(TextMeshProUGUI spellListBlock, Spell spell)
     {
-        for (int i = 0; i < spellInputList.Count; i++)      
+        string newInputDisplay = "";
+        for (int i = 0; i < spell.inputCode.Count; i++)
+        {
+            newInputDisplay += spell.inputCode[i].ToString();
+        }
+        spellListBlock.text = newInputDisplay;
+    }
+    public void ResetSpellInputTextAll()
+    {
+        for (int i = 0; i < spellInputList.Count; i++)
         {
             string newInputDisplay = "";
             for (int j = 0; j < spellListToDisplay[i].inputCode.Count; j++)

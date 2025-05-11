@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2831896443690646332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 777136869339262729}
+  - component: {fileID: -7617478729074372169}
+  m_Layer: 0
+  m_Name: MachineGunSpell
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &777136869339262729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2831896443690646332}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1520.5815, y: 385.28766, z: -3.008808}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-7617478729074372169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2831896443690646332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69b1c9d3b36334848b840f9d438185c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellListUI: {fileID: 0}
+  icon: {fileID: 0}
+  spellName: LunarianMachineGun
+  inputCode: 77000000730000006400000064000000
+  cooldown: 240
+  cooldownTime: 0
+  castingTime: 4
+  castingTimeElapsed: 0
+  playerIsCasting: 0
+  thisSpellIsCasting: 0
+  spellLocation: {x: 0, y: 0}
+  hasChosenLocation: 0
+  spellListBlock: {fileID: 0}
+  showingInputCode: 0
+  weaponPickup: {fileID: 2199269410599588888, guid: d7cc8c734723d144390e0be78618b8c9, type: 3}

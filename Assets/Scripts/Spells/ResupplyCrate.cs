@@ -3,14 +3,15 @@ using UnityEngine;
 public class ResupplyCrate : ItemPickup
 {
     private PlayerStatsUI playerStatsUI;
+    public GameObject parent;
     private void Start()
     {
         playerStatsUI = FindFirstObjectByType<PlayerStatsUI>();
     }
-    protected override void OnTriggerEnter2D(Collider2D collision)
+    protected override void PickupItem()
     {
-        base.OnTriggerEnter2D(collision);
-        WeaponHandler playerWeaponHandler = collision.gameObject.GetComponentInChildren<WeaponHandler>();
+        base.PickupItem();
+        WeaponHandler playerWeaponHandler = playerThatPickedUpItem.gameObject.GetComponentInChildren<WeaponHandler>();
         if (playerWeaponHandler._primaryWeaponInstance.TryGetComponent(out RangedWeapon isPrimaryRangedWeapon))
         {
             isPrimaryRangedWeapon.magAmount = isPrimaryRangedWeapon.magCapacity;
@@ -28,6 +29,6 @@ public class ResupplyCrate : ItemPickup
             playerStatsUI.UpdateMagAmount(isEquippedRangedWeapon.magAmount, isEquippedRangedWeapon.magCapacity);
             playerStatsUI.UpdateBulletAmount(isEquippedRangedWeapon.ammoAmount, isEquippedRangedWeapon.ammoCapacity);
         }
-        Destroy(gameObject);
+        Destroy(parent);
     }
 }

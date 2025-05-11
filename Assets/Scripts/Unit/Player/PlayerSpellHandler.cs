@@ -37,7 +37,7 @@ public class PlayerSpellHandler : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
-            spellListHandler.ResetSpellInputText();
+            spellListHandler.ResetSpellInputTextAll();
             foreach (Spell spell in spellList)
             {
                 spell.playerIsCasting = false;

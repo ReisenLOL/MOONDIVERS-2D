@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -45,18 +46,16 @@ public class Spell : MonoBehaviour
             {
                 if (Input.GetKeyDown(inputCode[currentIndex]))
                 {
-                    for (int i = 0; i < spellListUI.spellInputList.Count; i++)
+                    if (spellListBlock.text != null && spellListBlock.text[0] == inputCode[currentIndex].ToString()[0])
                     {
-                        if (spellListUI.spellInputList[i].text[0] == inputCode[currentIndex].ToString()[0])
-                        {
-                            string changeInputText = spellListUI.spellInputList[i].text.Substring(1);
-                            spellListUI.spellInputList[i].text = changeInputText;
-                        }
+                        string changeInputText = spellListBlock.text.Substring(1);
+                        spellListBlock.text = changeInputText;
+                        //i'm so good at this...
                     }
                     currentIndex++;
                     if (currentIndex >= inputCode.Count)
                     {
-                        spellListUI.ResetSpellInputText();
+                        spellListUI.ResetSpellInputTextAll();
                         startCastingSpell();
                         currentIndex = 0;
                     }
@@ -64,6 +63,7 @@ public class Spell : MonoBehaviour
                 else
                 {
                     currentIndex = 0;
+                    spellListUI.ResetSpellInputTextSpecific(spellListBlock, this);
                 }
             }
         }
