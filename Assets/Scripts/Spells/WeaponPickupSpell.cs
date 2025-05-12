@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class WeaponPickupSpell : Spell
 {
-    public SupportWeaponPickup weaponPickup;
+    public GameObject weaponPickup;
     protected override void CastSpell()
     {
         base.CastSpell();
-        SupportWeaponPickup newWeaponPickup = Instantiate(weaponPickup);
+        GameObject newWeaponPickup = Instantiate(weaponPickup);
         newWeaponPickup.transform.position = spellLocation;
     }
 }

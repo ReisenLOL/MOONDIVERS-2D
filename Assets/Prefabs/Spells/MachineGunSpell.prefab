@@ -58,4 +58,4 @@ MonoBehaviour:
   hasChosenLocation: 0
   spellListBlock: {fileID: 0}
   showingInputCode: 0
-  weaponPickup: {fileID: 2199269410599588888, guid: d7cc8c734723d144390e0be78618b8c9, type: 3}
+  weaponPickup: {fileID: 5398174947075922437, guid: d7cc8c734723d144390e0be78618b8c9, type: 3}
