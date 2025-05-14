@@ -514,7 +514,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.9}
+  m_AnchoredPosition: {x: 0, y: 0.9}
   m_SizeDelta: {x: 2, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6984739659287687024
@@ -565,6 +565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9159772112939816442}
   - component: {fileID: 3352200107981063210}
+  - component: {fileID: 2299725574315275551}
   m_Layer: 0
   m_Name: Detect Player
   m_TagString: Untagged
@@ -617,12 +618,31 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &2299725574315275551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4373626227227726937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b586ab77c6d360a49a5728f9f7208ff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayInteractionKey: {fileID: 2630500931586721204}
+  playerInRange: 0
+  isBeingInteractedWith: 0
+  inputDisplay: {fileID: 182618686860704744}
+  interactionKey: 101
+  keycodeCombinations: 77000000770000006100000061000000
+  currentIndex: 0
 --- !u!1 &5208956903301423010
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,7 +708,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Interact: E'
+  m_text: qhar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -21,9 +21,11 @@ public class ObjectiveInteractable : MonoBehaviour
         {
             if (Input.GetKeyDown(interactionKey))
             {
+                Debug.Log("here");
                 displayInteractionKey.SetActive(false);
-                ProcessInteraction();
+                inputDisplay.gameObject.SetActive(true);
                 isBeingInteractedWith = true;
+                ProcessInteraction();
             }
             if (isBeingInteractedWith && (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1)))
             {
