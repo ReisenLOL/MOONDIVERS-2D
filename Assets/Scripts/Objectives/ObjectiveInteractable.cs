@@ -5,8 +5,10 @@ using UnityEngine;
 public class ObjectiveInteractable : MonoBehaviour
 {
     public GameObject displayInteractionKey;
+    public PlayerController playerThatIsInRange;
     public bool playerInRange = false;
     public bool isBeingInteractedWith = false;
+    public GameObject inputDisplayUI;
     public TextMeshProUGUI inputDisplay;
     public KeyCode interactionKey;
     public List<KeyCode> keycodeCombinations = new();
@@ -21,21 +23,20 @@ public class ObjectiveInteractable : MonoBehaviour
         {
             if (Input.GetKeyDown(interactionKey))
             {
-                Debug.Log("here");
                 displayInteractionKey.SetActive(false);
-                inputDisplay.gameObject.SetActive(true);
                 isBeingInteractedWith = true;
                 ProcessInteraction();
             }
             if (isBeingInteractedWith && (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1)))
             {
                 displayInteractionKey.SetActive(true);
-                inputDisplay.gameObject.SetActive(false);
+                inputDisplayUI.SetActive(false);
                 isBeingInteractedWith = false;
             }
             if (isBeingInteractedWith)
             {
-                if (Input.anyKeyDown)
+                playerThatIsInRange.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+                if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)) //what have you done, sylvia...
                 {
                     if (Input.GetKeyDown(keycodeCombinations[currentIndex]))
                     {
@@ -48,7 +49,7 @@ public class ObjectiveInteractable : MonoBehaviour
                         currentIndex++;
                         if (currentIndex >= keycodeCombinations.Count)
                         {
-                            Debug.Log("congrats");
+                            ProcessSuccess();
                         }
                     }
                     else
@@ -63,6 +64,7 @@ public class ObjectiveInteractable : MonoBehaviour
     }
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
+        playerThatIsInRange = other.gameObject.GetComponent<PlayerController>();
         displayInteractionKey.SetActive(true);
         playerInRange = true;
     }
@@ -73,8 +75,14 @@ public class ObjectiveInteractable : MonoBehaviour
     }
     protected virtual void ProcessInteraction()
     {
-        inputDisplay.gameObject.SetActive(true);
-    }    
+        Debug.Log("INTERACTED");
+        inputDisplayUI.SetActive(true);
+    }
+    protected virtual void ProcessSuccess()
+    {
+        isBeingInteractedWith = false;
+        inputDisplayUI.SetActive(false);
+    }
     protected virtual void ResetInputDisplay(List<KeyCode> keyCodesToDisplay, TextMeshProUGUI inputUI)
     {
         string newInputText = "";

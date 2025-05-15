@@ -566,7 +566,7 @@ GameObject:
   - component: {fileID: 9159772112939816442}
   - component: {fileID: 3352200107981063210}
   - component: {fileID: 2299725574315275551}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Detect Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,6 +639,7 @@ MonoBehaviour:
   displayInteractionKey: {fileID: 2630500931586721204}
   playerInRange: 0
   isBeingInteractedWith: 0
+  inputDisplayUI: {fileID: 4163273990262201901}
   inputDisplay: {fileID: 182618686860704744}
   interactionKey: 101
   keycodeCombinations: 77000000770000006100000061000000

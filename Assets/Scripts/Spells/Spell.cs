@@ -42,7 +42,7 @@ public class Spell : MonoBehaviour
                 ShowInputText();
                 showingInputCode = true;
             }
-            if (cooldownTime <= 0 && Input.anyKeyDown)
+            if (cooldownTime <= 0 && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)))
             {
                 if (Input.GetKeyDown(inputCode[currentIndex]))
                 {
