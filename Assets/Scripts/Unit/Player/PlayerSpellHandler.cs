@@ -32,7 +32,7 @@ public class PlayerSpellHandler : MonoBehaviour
                 weapon.canFire = false;
             }
             player.rb.linearVelocity = Vector2.zero;
-            player.isInputtingSpell = true;
+            player.canMove = false;
             spellListUI.SetActive(true);
         }
         if (Input.GetKeyUp(KeyCode.LeftControl))
@@ -47,7 +47,7 @@ public class PlayerSpellHandler : MonoBehaviour
             {
                 weapon.canFire = true;
             }
-            player.isInputtingSpell = false;
+            player.canMove = true;
             spellListUI.SetActive(false);
         }
     }

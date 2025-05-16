@@ -1240,6 +1240,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4373626227227726937, guid: 2ff65e49fd0e78e479bc495fa2251c06, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1618,7 +1622,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2938678499968319486, guid: fb9df9b9965364e4c81d9c64ebd2a184, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5106538960003385994, guid: fb9df9b9965364e4c81d9c64ebd2a184, type: 3}
       propertyPath: 'spawnPoints.Array.data[0]'

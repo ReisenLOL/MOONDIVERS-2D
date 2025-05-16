@@ -29,7 +29,7 @@ public class WeaponHandler : MonoBehaviour
     }
     void Update()
     {
-        if ((_equippedRangedWeapon == null || _equippedRangedWeapon != null && !_equippedRangedWeapon.isReloading) && !player.isInputtingSpell)
+        if ((_equippedRangedWeapon == null || _equippedRangedWeapon != null && !_equippedRangedWeapon.isReloading) && player.canMove)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {

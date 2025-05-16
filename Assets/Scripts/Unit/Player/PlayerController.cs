@@ -6,7 +6,7 @@ public class PlayerController : Unit
     public Vector2 moveInput;
     public SpriteRenderer playerSpriteRenderer;
     private bool isFacingRight = false;
-    public bool isInputtingSpell = false;
+    public bool canMove = true;
     void Update()
     {
         moveInput.x = Input.GetAxisRaw("Horizontal");
@@ -25,7 +25,7 @@ public class PlayerController : Unit
     }
     private void FixedUpdate()
     {
-        if (!isInputtingSpell)
+        if (canMove)
         {
             rb.linearVelocity = moveInput * speed;
         }
