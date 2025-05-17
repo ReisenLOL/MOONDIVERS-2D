@@ -14,6 +14,8 @@ public class ObjectiveInteractable : MonoBehaviour
     public KeyCode interactionKey;
     public List<KeyCode> keycodeCombinations = new();
     public int currentIndex = 0;
+    public Objective objective;
+    public ObjectiveManager objectiveManager;
     protected virtual void Start()
     {
         ResetInputDisplay(keycodeCombinations, inputDisplay);
@@ -38,6 +40,7 @@ public class ObjectiveInteractable : MonoBehaviour
             }
             if (isBeingInteractedWith)
             {
+                //placeholder testing code below.
                 if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)) //what have you done, sylvia...
                 {
                     if (Input.GetKeyDown(keycodeCombinations[currentIndex]))
@@ -90,6 +93,7 @@ public class ObjectiveInteractable : MonoBehaviour
         completed = true;
         isBeingInteractedWith = false;
         playerThatIsInRange.canMove = true;
+        objectiveManager.CompleteObjective(objective);
         inputDisplayUI.SetActive(false);
     }
     protected virtual void ResetInputDisplay(List<KeyCode> keyCodesToDisplay, TextMeshProUGUI inputUI)
