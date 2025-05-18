@@ -437,6 +437,56 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &141865611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 141865613}
+  - component: {fileID: 141865612}
+  m_Layer: 0
+  m_Name: ObjectiveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &141865612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141865611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4bd7c707eda5d4ea3eb7bc65b93c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveListUI: {fileID: 2132674189}
+  objectiveListUITemplate: {fileID: 48824849}
+  objectiveList:
+  - {fileID: 1620321962}
+  subObjectiveList: []
+--- !u!4 &141865613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141865611}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1230.4484, y: 661.4041, z: -3.266766}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1620321961}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &547245471
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,6 +1452,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578813743}
   m_CullTransparentMesh: 1
+--- !u!1 &1620321960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1620321961}
+  - component: {fileID: 1620321962}
+  m_Layer: 0
+  m_Name: placeholderObjective
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1620321961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620321960}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 141865613}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1620321962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620321960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eb5908245449de4389f0810f57be300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  completed: 0
+  objectiveName: PLACEHOLDER OBJECTIVE
+  objectiveIcon: {fileID: 0}
 --- !u!1001 &1652497773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1410,6 +1507,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2299725574315275551, guid: 2ff65e49fd0e78e479bc495fa2251c06, type: 3}
+      propertyPath: objective
+      value: 
+      objectReference: {fileID: 1620321962}
+    - target: {fileID: 2299725574315275551, guid: 2ff65e49fd0e78e479bc495fa2251c06, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 141865612}
     - target: {fileID: 3470985192027498883, guid: 2ff65e49fd0e78e479bc495fa2251c06, type: 3}
       propertyPath: m_Name
       value: Interactable
@@ -1972,7 +2077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2938678499968319486, guid: fb9df9b9965364e4c81d9c64ebd2a184, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5106538960003385994, guid: fb9df9b9965364e4c81d9c64ebd2a184, type: 3}
       propertyPath: 'spawnPoints.Array.data[0]'
@@ -2196,3 +2301,4 @@ SceneRoots:
   - {fileID: 930629130}
   - {fileID: 980866918928788454}
   - {fileID: 1652497773}
+  - {fileID: 141865613}
