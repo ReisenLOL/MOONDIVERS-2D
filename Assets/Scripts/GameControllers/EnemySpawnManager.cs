@@ -2,6 +2,12 @@ using UnityEngine;
 
 public class EnemySpawnManager : MonoBehaviour
 {
+    [System.Serializable]
+    public class EnemySpawnGroups
+    {
+        public Unit[] enemiesToSpawn;
+        public Transform validSpawnLocations; //placeholder, this will be areas it can spawn in.
+    }
     //boring surround spawning, will replace with enemy groups and patrols later.
     public float spawnRate;
     public float spawnTime;
@@ -14,8 +20,12 @@ public class EnemySpawnManager : MonoBehaviour
         if (spawnTime > spawnRate)
         {
             spawnTime = 0;
-            Unit newEnemy = Instantiate(enemyToSpawn);
-            newEnemy.transform.position = spawnPoints[Random.Range(0, spawnPoints.Length)].position;
+            SpawnSpecificUnit(enemyToSpawn, spawnPoints[Random.Range(0, spawnPoints.Length)].position);
         }
+    }
+    public void SpawnSpecificUnit(Unit unit, Vector3 locationToSpawn)
+    {
+        Unit newEnemy = Instantiate(unit);
+        newEnemy.transform.position = locationToSpawn;
     }
 }
