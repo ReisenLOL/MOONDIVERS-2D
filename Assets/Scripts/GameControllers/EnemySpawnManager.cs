@@ -3,10 +3,10 @@ using UnityEngine;
 public class EnemySpawnManager : MonoBehaviour
 {
     [System.Serializable]
-    public class EnemySpawnGroups
+    public class EnemySpawnGroup
     {
         public Unit[] enemiesToSpawn;
-        public Transform validSpawnLocations; //placeholder, this will be areas it can spawn in.
+        public Transform[] validSpawnLocations; //placeholder, this will be areas it can spawn in.
     }
     //boring surround spawning, will replace with enemy groups and patrols later.
     public float spawnRate;
@@ -23,9 +23,20 @@ public class EnemySpawnManager : MonoBehaviour
             SpawnSpecificUnit(enemyToSpawn, spawnPoints[Random.Range(0, spawnPoints.Length)].position);
         }
     }
-    public void SpawnSpecificUnit(Unit unit, Vector3 locationToSpawn)
+    public void SpawnSpecificUnit(Unit unit, Vector3 locationToSpawn, int spawnAmount = 1)
     {
-        Unit newEnemy = Instantiate(unit);
-        newEnemy.transform.position = locationToSpawn;
+        for (int i = 0; i < spawnAmount; i++)
+        {
+            Unit newEnemy = Instantiate(unit);
+            newEnemy.transform.position = locationToSpawn;
+        }
+    }
+    public void SpawnUnitsFromGroup(EnemySpawnGroup spawnGroup)
+    {
+        for (int i = 0; i < spawnGroup.enemiesToSpawn.Length; i++)
+        {
+            Unit newEnemy = Instantiate(spawnGroup.enemiesToSpawn[i]);
+            newEnemy.transform.position = spawnGroup.validSpawnLocations[i].position;
+        }
     }
 }
